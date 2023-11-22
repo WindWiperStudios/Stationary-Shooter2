@@ -16,9 +16,9 @@ func _physics_process(delta):
 	global_position += direction * speed * delta
 
 
-func _on_area_entered(area):
+func _on_area_entered(area : Enemy):
 	print(area.name , "_hit")
-	area.healthcomponent.curHealth -= bulletDamage
+	area.healthComponent.curHealth -= bulletDamage
 	queue_free()
 
 func _on_visible_on_screen_enabler_2d_screen_exited():

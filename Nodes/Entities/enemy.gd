@@ -1,4 +1,5 @@
 extends Area2D
+class_name Enemy
 
 @export var moveSpeed : float
 @onready var healthComponent = $HealthComponent

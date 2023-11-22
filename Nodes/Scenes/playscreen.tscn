@@ -20,3 +20,4 @@ position = Vector2(646, 2498)
 [node name="ProjectileContainer" type="Node2D" parent="."]
 
 [node name="EnemySpanwer" parent="." instance=ExtResource("3_h2kmg")]
+position = Vector2(646, -378)
