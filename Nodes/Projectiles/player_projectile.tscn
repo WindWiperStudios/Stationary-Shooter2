@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://be34tisg4asnc"]
+
+[ext_resource type="Script" path="res://Nodes/Projectiles/player_projectile.gd" id="1_c5oyy"]
+[ext_resource type="Texture2D" uid="uid://bmdheoxci0jax" path="res://Images/uipack_rpg_sheet.png" id="1_squem"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hro70"]
+radius = 18.0
+
+[node name="PlayerProjectile" type="Area2D"]
+script = ExtResource("1_c5oyy")
+speed = 500.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_hro70")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_squem")
+region_enabled = true
+region_rect = Rect2(335, 0, 35, 35)
