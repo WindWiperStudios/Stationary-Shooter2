@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://mgi5v6mjmlps"]
+
+[ext_resource type="Script" path="res://Nodes/Components/enemy_spanwer.gd" id="1_3hng1"]
+[ext_resource type="PackedScene" uid="uid://bv38vcoyhh1rt" path="res://Nodes/Scenes/level_1.tscn" id="2_0hus2"]
+
+[node name="EnemySpanwer" type="Node2D"]
+position = Vector2(646, -1000)
+script = ExtResource("1_3hng1")
+levels = Array[PackedScene]([ExtResource("2_0hus2")])

@@ -1,28 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dofjn1nbm0hy5"]
+[gd_scene load_steps=4 format=3 uid="uid://dofjn1nbm0hy5"]
 
 [ext_resource type="PackedScene" uid="uid://bduv5t3tpk173" path="res://Nodes/Entities/wall.tscn" id="1_2x8h4"]
 [ext_resource type="PackedScene" uid="uid://nansvvfxtdnc" path="res://Nodes/Entities/player.tscn" id="2_ycadu"]
-[ext_resource type="PackedScene" uid="uid://b88mfj5dxofni" path="res://Nodes/Entities/enemy.tscn" id="3_50p3p"]
-[ext_resource type="Texture2D" uid="uid://lxdciyhd65a3" path="res://Images/spritesheet_characters.png" id="4_ng2wr"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3dpya"]
-radius = 51.0
-height = 102.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ekwy2"]
-atlas = ExtResource("4_ng2wr")
-region = Rect2(0, 0, 55, 42)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_l8kw6"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ekwy2")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[ext_resource type="PackedScene" uid="uid://mgi5v6mjmlps" path="res://Nodes/Components/enemy_spanwer.tscn" id="3_h2kmg"]
 
 [node name="Playscreen" type="MarginContainer"]
 anchors_preset = 15
@@ -39,17 +19,4 @@ position = Vector2(646, 2498)
 
 [node name="ProjectileContainer" type="Node2D" parent="."]
 
-[node name="Enemy" parent="." instance=ExtResource("3_50p3p")]
-position = Vector2(617, 184)
-moveSpeed = 250.0
-
-[node name="CollisionShape2D" parent="Enemy" index="0"]
-position = Vector2(-2, -21)
-shape = SubResource("CapsuleShape2D_3dpya")
-
-[node name="AnimatedSprite2D" parent="Enemy" index="1"]
-rotation = 1.5708
-scale = Vector2(2.5, 2.5)
-sprite_frames = SubResource("SpriteFrames_l8kw6")
-
-[editable path="Enemy"]
+[node name="EnemySpanwer" parent="." instance=ExtResource("3_h2kmg")]
