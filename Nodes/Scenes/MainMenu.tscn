@@ -97,4 +97,5 @@ amount = 100
 process_material = SubResource("ParticleProcessMaterial_d6gt8")
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="button_up" from="QuitButton" to="." method="_on_quit_button_button_up"]
