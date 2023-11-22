@@ -2,6 +2,7 @@ extends Area2D
 
 @export var speed : float
 @export var particleSpeed : float
+@export var bulletDamage : float
 
 @onready var particle = $GPUParticles2D
 
@@ -13,3 +14,13 @@ func _ready():
 
 func _physics_process(delta):
 	global_position += direction * speed * delta
+
+
+func _on_area_entered(area):
+	print(area.name , "_hit")
+	area.healthcomponent.curHealth -= bulletDamage
+	queue_free()
+
+func _on_visible_on_screen_enabler_2d_screen_exited():
+	queue_free()
+	print("bullet deleted")

@@ -13,3 +13,4 @@ func _ready():
 func _process(_delta):
 	if curHealth <= 0:
 		emit_signal("zeroHealth")
+

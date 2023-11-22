@@ -7,8 +7,11 @@
 radius = 18.0
 
 [node name="PlayerProjectile" type="Area2D"]
+collision_layer = 2
+collision_mask = 4
 script = ExtResource("1_c5oyy")
 speed = 500.0
+bulletDamage = 10.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_hro70")
@@ -19,3 +22,8 @@ region_enabled = true
 region_rect = Rect2(335, 0, 35, 35)
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

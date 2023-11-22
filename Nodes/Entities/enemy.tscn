@@ -8,6 +8,8 @@
 size = Vector2(40, 31)
 
 [node name="Enemy" type="Area2D"]
+collision_layer = 4
+collision_mask = 3
 script = ExtResource("1_a450x")
 moveSpeed = 175.0
 
