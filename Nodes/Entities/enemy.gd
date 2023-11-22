@@ -14,6 +14,7 @@ func move(delta):
 	global_position += walkDir * moveSpeed * delta
 
 func enemy_death()-> void:
+	print(name, "_isDead")
 	queue_free()
 
 func _ready():
