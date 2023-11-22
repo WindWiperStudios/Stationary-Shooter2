@@ -17,3 +17,5 @@ shape = SubResource("CircleShape2D_hro70")
 texture = ExtResource("1_squem")
 region_enabled = true
 region_rect = Rect2(335, 0, 35, 35)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]

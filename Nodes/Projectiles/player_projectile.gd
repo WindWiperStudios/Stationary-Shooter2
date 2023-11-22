@@ -1,6 +1,9 @@
 extends Area2D
 
 @export var speed : float
+@export var particleSpeed : float
+
+@onready var particle = $GPUParticles2D
 
 var direction : Vector2
 
