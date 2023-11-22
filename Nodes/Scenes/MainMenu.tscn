@@ -1,0 +1,100 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhtksdjtom54y"]
+
+[ext_resource type="Script" path="res://Nodes/Scenes/MainMenu.gd" id="1_jh3v8"]
+
+[sub_resource type="Gradient" id="Gradient_6jre1"]
+offsets = PackedFloat32Array(0, 0.259259, 0.525926, 1)
+colors = PackedColorArray(0, 0.87451, 0.796078, 1, 1, 1, 1, 1, 0.255468, 0.759733, 0.719449, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3rivi"]
+gradient = SubResource("Gradient_6jre1")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_d6gt8"]
+emission_shape = 3
+emission_box_extents = Vector3(750, 1000, 1)
+particle_flag_disable_z = true
+gravity = Vector3(0, 200, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+color_ramp = SubResource("GradientTexture1D_3rivi")
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jh3v8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0941176, 0.247059, 0.309804, 1)
+
+[node name="PlayButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -284.0
+offset_top = -159.0
+offset_right = 284.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.756863, 0.776471, 0.760784, 1)
+theme_override_colors/font_pressed_color = Color(0.60337, 0.630371, 0.607599, 1)
+theme_override_font_sizes/font_size = 40
+text = "Play"
+
+[node name="OptionsButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -224.0
+offset_top = 18.5
+offset_right = 224.0
+offset_bottom = 99.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.756863, 0.776471, 0.760784, 1)
+theme_override_colors/font_pressed_color = Color(0.60337, 0.630371, 0.607599, 1)
+theme_override_font_sizes/font_size = 40
+text = "Options"
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.0
+offset_top = 203.5
+offset_right = 99.0
+offset_bottom = 266.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.756863, 0.776471, 0.760784, 1)
+theme_override_colors/font_pressed_color = Color(0.60337, 0.630371, 0.607599, 1)
+theme_override_font_sizes/font_size = 40
+text = "Quit"
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(641, 1170)
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_d6gt8")
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="button_up" from="QuitButton" to="." method="_on_quit_button_button_up"]
