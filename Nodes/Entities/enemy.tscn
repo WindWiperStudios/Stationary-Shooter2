@@ -12,6 +12,7 @@ collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_a450x")
 moveSpeed = 175.0
+enemyDamageonTouch = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -0.5)
@@ -25,3 +26,6 @@ region_enabled = true
 region_rect = Rect2(390, 176, 33, 43)
 
 [node name="HealthComponent" parent="." instance=ExtResource("1_ly3xg")]
+maxHealth = 50
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
