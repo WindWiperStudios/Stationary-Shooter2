@@ -8,19 +8,23 @@ extends Area2D
 
 var direction : Vector2
 
+
+#On startup
 func _ready():
 	var mouse_position = get_viewport().get_mouse_position()
 	direction = (mouse_position - global_position).normalized()
 
+
+#Moves the bullet every physics frame
 func _physics_process(delta):
 	global_position += direction * speed * delta
 
 
+#Detects when colliding with an enemy and does damage
 func _on_area_entered(area : Enemy):
-	print(area.name , "_hit")
 	area.healthComponent.curHealth -= bulletDamage
 	queue_free()
 
+#Deletes bullets when they leave the screen
 func _on_visible_on_screen_enabler_2d_screen_exited():
 	queue_free()
-	print("bullet deleted")
