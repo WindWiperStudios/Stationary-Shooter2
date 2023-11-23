@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bduv5t3tpk173"]
+[gd_scene load_steps=7 format=3 uid="uid://bduv5t3tpk173"]
 
 [ext_resource type="Texture2D" uid="uid://dfdnvhb30ehoa" path="res://Images/spritesheet_tiles.png" id="1_8kqou"]
+[ext_resource type="Script" path="res://Nodes/Entities/wall.gd" id="1_lmpxd"]
+[ext_resource type="PackedScene" uid="uid://cxr7b5sdo025f" path="res://Nodes/Components/health_component.tscn" id="3_jobib"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vv6f4"]
 
@@ -556,6 +558,7 @@ sources/0 = SubResource("TileSetAtlasSource_pele2")
 
 [node name="Wall" type="Area2D"]
 collision_mask = 4
+script = ExtResource("1_lmpxd")
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_vv6f4")
@@ -565,3 +568,5 @@ position = Vector2(-4, 0)
 tile_set = SubResource("TileSet_twvvf")
 format = 2
 layer_0/tile_data = PackedInt32Array(65535, 917504, 13, 0, 917504, 13, 1, 917504, 13, 65534, 917504, 13, 65533, 917504, 13, 2, 917504, 13, -3, 851968, 13, -65534, 851968, 13, -2, 851968, 13, -1, 851968, 13, -65536, 851968, 13, -65535, 851968, 13, 65532, 917504, 13, 65531, 917504, 13, 65530, 917504, 13, 65529, 917504, 13, 65528, 917504, 13, 65527, 917504, 13, 3, 917504, 13, 4, 917504, 13, 5, 917504, 13, 6, 917504, 13, 7, 917504, 13, 8, 917504, 13, 9, 1114112, 11, -65527, 1114112, 10, -10, 1048576, 10, 65526, 1048576, 11, -9, 851968, 13, -8, 851968, 13, -7, 851968, 13, -6, 851968, 13, -5, 851968, 13, -4, 851968, 13, -65533, 851968, 13, -65532, 851968, 13, -65531, 851968, 13, -65530, 851968, 13, -65529, 851968, 13, -65528, 851968, 13)
+
+[node name="HealthComponent" parent="." instance=ExtResource("3_jobib")]

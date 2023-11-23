@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://nansvvfxtdnc"]
+
+[ext_resource type="Script" path="res://Nodes/Entities/player.gd" id="1_fsql1"]
+[ext_resource type="Texture2D" uid="uid://lxdciyhd65a3" path="res://Images/spritesheet_characters.png" id="2_877ds"]
+[ext_resource type="PackedScene" uid="uid://be34tisg4asnc" path="res://Nodes/Projectiles/player_projectile.tscn" id="2_u3vql"]
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_fsql1")
+projectileScene = ExtResource("2_u3vql")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_877ds")
+region_enabled = true
+region_rect = Rect2(349, 1, 38, 42)
+
+[node name="ProjectileSpawn" type="Node2D" parent="."]
+position = Vector2(57, 0)
