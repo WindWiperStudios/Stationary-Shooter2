@@ -26,5 +26,5 @@ func _on_area_entered(area : Enemy):
 	queue_free()
 
 #Deletes bullets when they leave the screen
-func _on_visible_on_screen_enabler_2d_screen_exited():
+func _on_screen_exited():
 	queue_free()
