@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://dofjn1nbm0hy5"]
+[gd_scene load_steps=7 format=3 uid="uid://dofjn1nbm0hy5"]
 
 [ext_resource type="PackedScene" uid="uid://bduv5t3tpk173" path="res://Nodes/Entities/wall.tscn" id="1_2x8h4"]
 [ext_resource type="PackedScene" uid="uid://nansvvfxtdnc" path="res://Nodes/Entities/player.tscn" id="2_ycadu"]
 [ext_resource type="PackedScene" uid="uid://mgi5v6mjmlps" path="res://Nodes/Components/enemy_spanwer.tscn" id="3_h2kmg"]
+[ext_resource type="PackedScene" uid="uid://dlggcn5mm35ab" path="res://Nodes/Scenes/level_test.tscn" id="4_kdkwj"]
+[ext_resource type="PackedScene" uid="uid://bv38vcoyhh1rt" path="res://Nodes/Scenes/level_1.tscn" id="5_816m6"]
+[ext_resource type="PackedScene" uid="uid://bcpien4ljamb0" path="res://Nodes/Scenes/level_2.tscn" id="6_755ed"]
 
 [node name="Playscreen" type="MarginContainer"]
 anchors_preset = 15
@@ -21,3 +24,4 @@ position = Vector2(646, 2498)
 
 [node name="EnemySpanwer" parent="." instance=ExtResource("3_h2kmg")]
 position = Vector2(646, -378)
+levels = Array[PackedScene]([ExtResource("4_kdkwj"), ExtResource("5_816m6"), ExtResource("6_755ed")])

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dr67hblsvta7o"]
+
+[ext_resource type="Script" path="res://Nodes/Projectiles/enemy_attack.gd" id="1_imhv8"]
+[ext_resource type="Texture2D" uid="uid://d1oujat5ksv7q" path="res://Images/Fireball.webp" id="1_nx8ma"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_alnmy"]
+radius = 58.1378
+
+[node name="EnemyAttack" type="Area2D"]
+script = ExtResource("1_imhv8")
+aliveTime = 0.25
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_nx8ma")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_alnmy")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

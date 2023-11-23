@@ -1,24 +1,43 @@
 extends Area2D
 class_name Enemy
 
+signal attacking
+
 @export var moveSpeed : float
+@export var attackCD = 1.0
+
 @onready var healthComponent = $HealthComponent
-@export var enemyDamageonTouch : float #for the dmg to the wall
-signal wallTouched(float)
 
 var walkDir = Vector2.DOWN
+var isAttacking = false
+var damage = 10
+var timeSinceAttacked
 
 
 #On ready, connects the health component's signal to enemy death function
 func _ready():
 	healthComponent.zeroHealth.connect(enemy_death)
+	timeSinceAttacked = attackCD
+
+func _process(delta):
+	if timeSinceAttacked < attackCD:
+		timeSinceAttacked += delta
 
 func _physics_process(delta):
-	move(delta)
+	#If enemy hasn't reached wall yet, continue walking south
+	if isAttacking == false:
+		Move(delta)
+	else:
+		if timeSinceAttacked >= attackCD:
+			Attack()
+			timeSinceAttacked = 0
 
 #Moves the enemy south
-func move(delta):
+func Move(delta):
 	global_position += walkDir * moveSpeed * delta
+
+func Attack():
+	emit_signal("attacking")
 
 #Actions to take on enemy death
 func enemy_death()-> void:
@@ -27,7 +46,7 @@ func enemy_death()-> void:
 	#And when enemies left <= 0 it sets the game mode to succeeded and unlocks next stage
 	queue_free()
 
-#Will send a signal to wall with the dmg number of said enemy maybe
+
 func _on_area_entered(area : Wall):
-	if area.name == 'Wall':
-		emit_signal("wallTouched",1)
+	if area != null:
+		isAttacking = true

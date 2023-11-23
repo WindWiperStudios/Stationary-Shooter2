@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b88mfj5dxofni"]
+[gd_scene load_steps=7 format=3 uid="uid://b88mfj5dxofni"]
 
 [ext_resource type="Script" path="res://Nodes/Entities/enemy.gd" id="1_a450x"]
 [ext_resource type="PackedScene" uid="uid://cxr7b5sdo025f" path="res://Nodes/Components/health_component.tscn" id="1_ly3xg"]
 [ext_resource type="Texture2D" uid="uid://lxdciyhd65a3" path="res://Images/spritesheet_characters.png" id="2_y64kp"]
+[ext_resource type="Script" path="res://Nodes/Entities/AttackLocation.gd" id="4_0a75i"]
+[ext_resource type="PackedScene" uid="uid://dr67hblsvta7o" path="res://Nodes/Projectiles/enemy_attack.tscn" id="5_odcqs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cs1ov"]
 size = Vector2(40, 31)
@@ -11,8 +13,8 @@ size = Vector2(40, 31)
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_a450x")
-moveSpeed = 175.0
-enemyDamageonTouch = 1.0
+moveSpeed = 500.0
+attackCD = 1.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -0.5)
@@ -27,5 +29,10 @@ region_rect = Rect2(390, 176, 33, 43)
 
 [node name="HealthComponent" parent="." instance=ExtResource("1_ly3xg")]
 maxHealth = 50
+
+[node name="AttackLocation" type="Node2D" parent="."]
+position = Vector2(0, 61)
+script = ExtResource("4_0a75i")
+attackScene = ExtResource("5_odcqs")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
