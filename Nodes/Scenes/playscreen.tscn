@@ -25,7 +25,7 @@ position = Vector2(646, 2498)
 
 [node name="EnemySpanwer" parent="." instance=ExtResource("3_h2kmg")]
 position = Vector2(646, -378)
-levels = Array[PackedScene]([ExtResource("4_kdkwj"), ExtResource("5_816m6"), ExtResource("6_755ed")])
+levels = Array[PackedScene]([ExtResource("5_816m6"), ExtResource("4_kdkwj"), ExtResource("6_755ed")])
 
 [node name="GameOver" parent="." instance=ExtResource("7_kwm02")]
 visible = false

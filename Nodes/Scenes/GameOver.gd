@@ -10,5 +10,6 @@ func _on_retry_button_pressed():
 
 func _on_main_menu_button_pressed()-> void:
 	# Returns User to Main Menu
+	get_tree().paused = false
 	var mainMenuScene = load("res://Nodes/Scenes/MainMenu.tscn")
 	get_tree().change_scene_to_packed(mainMenuScene)
