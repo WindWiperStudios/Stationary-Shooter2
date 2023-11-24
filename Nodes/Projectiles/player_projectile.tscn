@@ -1,10 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://be34tisg4asnc"]
+[gd_scene load_steps=5 format=3 uid="uid://be34tisg4asnc"]
 
 [ext_resource type="Script" path="res://Nodes/Projectiles/player_projectile.gd" id="1_c5oyy"]
 [ext_resource type="Texture2D" uid="uid://bmdheoxci0jax" path="res://Images/uipack_rpg_sheet.png" id="1_squem"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hro70"]
 radius = 18.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_32yxc"]
+emission_shape = 1
+emission_sphere_radius = 17.0
+particle_flag_disable_z = true
+gravity = Vector3(0, 25, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 1.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
 
 [node name="PlayerProjectile" type="Area2D"]
 collision_layer = 2
@@ -16,12 +26,15 @@ bulletDamage = 10.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_hro70")
 
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+amount = 55
+process_material = SubResource("ParticleProcessMaterial_32yxc")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.713726, 0.713726, 0.713726, 1)
 texture = ExtResource("1_squem")
 region_enabled = true
 region_rect = Rect2(335, 0, 35, 35)
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
 
