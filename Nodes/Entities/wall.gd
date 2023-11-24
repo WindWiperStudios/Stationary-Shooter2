@@ -13,7 +13,8 @@ func wall_destruction():
 
 func WallHealthZero():
 	#Display game over screen
+	$"../GameOver".visible = true
 	print("Wall has 0 health.")
 	#Temporarily setting health back for testing
-	healthComponent.curHealth = healthComponent.maxHealth
+	#healthComponent.curHealth = healthComponent.maxHealth
 
