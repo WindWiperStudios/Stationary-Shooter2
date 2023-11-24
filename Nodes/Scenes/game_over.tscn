@@ -1,0 +1,61 @@
+[gd_scene load_steps=2 format=3 uid="uid://b441fuw5naeql"]
+
+[ext_resource type="Script" path="res://Nodes/Scenes/GameOver.gd" id="1_ymjvp"]
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ymjvp")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -308.0
+offset_top = -131.0
+offset_right = 316.0
+offset_bottom = 183.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.360784)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+offset_left = 343.0
+offset_top = 1247.0
+offset_right = 941.0
+offset_bottom = 1387.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 100
+text = " Game Over."
+
+[node name="RetryButton" type="Button" parent="."]
+layout_mode = 2
+offset_left = 453.0
+offset_top = 1396.0
+offset_right = 831.0
+offset_bottom = 1465.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 35
+text = "Retry?"
+
+[node name="MainMenuButton" type="Button" parent="."]
+layout_mode = 2
+offset_left = 452.0
+offset_top = 1473.0
+offset_right = 831.0
+offset_bottom = 1542.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 35
+text = "Main Menu"
+
+[connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="MainMenuButton" to="." method="_on_main_menu_button_pressed"]
