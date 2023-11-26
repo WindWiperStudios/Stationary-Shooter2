@@ -1,12 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://dofjn1nbm0hy5"]
+[gd_scene load_steps=10 format=3 uid="uid://dofjn1nbm0hy5"]
 
 [ext_resource type="PackedScene" uid="uid://bduv5t3tpk173" path="res://Nodes/Entities/wall.tscn" id="1_2x8h4"]
+[ext_resource type="PackedScene" uid="uid://biaeja3wqgsv1" path="res://Nodes/Scenes/level_design.tscn" id="1_d4qni"]
 [ext_resource type="PackedScene" uid="uid://nansvvfxtdnc" path="res://Nodes/Entities/player.tscn" id="2_ycadu"]
 [ext_resource type="PackedScene" uid="uid://mgi5v6mjmlps" path="res://Nodes/Components/enemy_spanwer.tscn" id="3_h2kmg"]
 [ext_resource type="PackedScene" uid="uid://dlggcn5mm35ab" path="res://Nodes/Scenes/level_test.tscn" id="4_kdkwj"]
 [ext_resource type="PackedScene" uid="uid://bv38vcoyhh1rt" path="res://Nodes/Scenes/level_1.tscn" id="5_816m6"]
 [ext_resource type="PackedScene" uid="uid://bcpien4ljamb0" path="res://Nodes/Scenes/level_2.tscn" id="6_755ed"]
 [ext_resource type="PackedScene" uid="uid://b441fuw5naeql" path="res://Nodes/Scenes/game_over.tscn" id="7_kwm02"]
+[ext_resource type="PackedScene" uid="uid://c8cni0sj1bd01" path="res://Nodes/Scenes/hud.tscn" id="8_yjouf"]
 
 [node name="Playscreen" type="MarginContainer"]
 anchors_preset = 15
@@ -15,17 +17,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="LevelDesign" parent="." instance=ExtResource("1_d4qni")]
+
 [node name="Wall" parent="." instance=ExtResource("1_2x8h4")]
-position = Vector2(646, 2500)
+position = Vector2(648, 2425)
+scale = Vector2(0.9, 0.9)
 
 [node name="Player" parent="." instance=ExtResource("2_ycadu")]
-position = Vector2(646, 2498)
+position = Vector2(646, 2587)
 
 [node name="ProjectileContainer" type="Node2D" parent="."]
 
 [node name="EnemySpanwer" parent="." instance=ExtResource("3_h2kmg")]
 position = Vector2(646, -378)
 levels = Array[PackedScene]([ExtResource("5_816m6"), ExtResource("4_kdkwj"), ExtResource("6_755ed")])
+
+[node name="HUD" parent="." instance=ExtResource("8_yjouf")]
+layout_mode = 2
 
 [node name="GameOver" parent="." instance=ExtResource("7_kwm02")]
 visible = false

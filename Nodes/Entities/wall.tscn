@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://bduv5t3tpk173"]
+[gd_scene load_steps=8 format=3 uid="uid://bduv5t3tpk173"]
 
 [ext_resource type="Texture2D" uid="uid://dfdnvhb30ehoa" path="res://Images/spritesheet_tiles.png" id="1_8kqou"]
 [ext_resource type="Script" path="res://Nodes/Entities/wall.gd" id="1_lmpxd"]
 [ext_resource type="PackedScene" uid="uid://cxr7b5sdo025f" path="res://Nodes/Components/health_component.tscn" id="3_jobib"]
+[ext_resource type="Texture2D" uid="uid://b564nu0q257ll" path="res://Images/upgraded wall.png" id="4_n7fsq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vv6f4"]
-size = Vector2(1279, 125)
+size = Vector2(1345, 125)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pele2"]
 texture = ExtResource("1_8kqou")
@@ -565,7 +566,8 @@ script = ExtResource("1_lmpxd")
 position = Vector2(-3.5, -1.5)
 shape = SubResource("RectangleShape2D_vv6f4")
 
-[node name="WallSprite" type="TileMap" parent="."]
+[node name="oldWallSprite" type="TileMap" parent="."]
+visible = false
 position = Vector2(-4, 0)
 tile_set = SubResource("TileSet_twvvf")
 format = 2
@@ -573,3 +575,12 @@ layer_0/tile_data = PackedInt32Array(65535, 917504, 13, 0, 917504, 13, 1, 917504
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_jobib")]
 maxHealth = 20
+
+[node name="newWallSprite" type="Sprite2D" parent="."]
+position = Vector2(-336, 61)
+scale = Vector2(3.5, 4)
+texture = ExtResource("4_n7fsq")
+
+[node name="newWallSprite2" type="Sprite2D" parent="newWallSprite"]
+position = Vector2(192, 0)
+texture = ExtResource("4_n7fsq")
