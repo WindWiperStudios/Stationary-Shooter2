@@ -25,6 +25,7 @@ scale = Vector2(0.9, 0.9)
 
 [node name="Player" parent="." instance=ExtResource("2_ycadu")]
 position = Vector2(646, 2587)
+shootCD = 0.85
 
 [node name="ProjectileContainer" type="Node2D" parent="."]
 
