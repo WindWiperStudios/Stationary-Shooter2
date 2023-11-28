@@ -10,15 +10,14 @@ script = ExtResource("1_fsql1")
 projectileScene = ExtResource("2_u3vql")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-scale = Vector2(2.5, 2.5)
+scale = Vector2(1.33, 1.33)
 texture = ExtResource("2_877ds")
 region_enabled = true
 region_rect = Rect2(349, 1, 38, 42)
 
 [node name="ProjectileSpawn" type="Node2D" parent="."]
-position = Vector2(72, 31)
+position = Vector2(44, 13)
 
 [node name="pistol" parent="." instance=ExtResource("4_5h8b8")]
-position = Vector2(49, 32)
+position = Vector2(30, 13)
 rotation = 1.5708
-scale = Vector2(2, 2)

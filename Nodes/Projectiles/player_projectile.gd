@@ -5,6 +5,7 @@ extends Area2D
 @export var bulletDamage : float
 
 @onready var particle = $GPUParticles2D
+@onready var sprite = $Sprite2D
 
 var direction : Vector2
 
@@ -13,6 +14,11 @@ var direction : Vector2
 func _ready():
 	var mouse_position = get_viewport().get_mouse_position()
 	direction = (mouse_position - global_position).normalized()
+	var new_angle =  PI + atan2(direction.y, direction.x) 
+	sprite.rotation  = new_angle
+
+func _process(_delta):
+	pass
 
 
 #Moves the bullet every physics frame

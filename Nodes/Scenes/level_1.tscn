@@ -5,22 +5,22 @@
 [node name="Level1" type="Node2D"]
 
 [node name="Enemy" parent="." instance=ExtResource("1_21ahq")]
-position = Vector2(-53, -61)
+position = Vector2(-32, 0)
 
 [node name="Enemy2" parent="." instance=ExtResource("1_21ahq")]
-position = Vector2(103, -62)
+position = Vector2(32, 0)
 
 [node name="Enemy3" parent="." instance=ExtResource("1_21ahq")]
-position = Vector2(305, -232)
+position = Vector2(65, -45)
 
 [node name="Enemy4" parent="." instance=ExtResource("1_21ahq")]
-position = Vector2(168, -165)
+position = Vector2(0, -45)
 
 [node name="Enemy5" parent="." instance=ExtResource("1_21ahq")]
-position = Vector2(47, -241)
+position = Vector2(-65, -45)
 
 [node name="Enemy6" parent="." instance=ExtResource("1_21ahq")]
-position = Vector2(-78, -180)
+position = Vector2(0, -140)
 
 [node name="Enemy7" parent="." instance=ExtResource("1_21ahq")]
-position = Vector2(-213, -214)
+position = Vector2(0, -214)

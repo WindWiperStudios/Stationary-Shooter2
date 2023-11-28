@@ -5,12 +5,12 @@ signal attacking
 
 @export var moveSpeed : float
 @export var attackCD = 1.0
+@export var damage = 10
 
 @onready var healthComponent = $HealthComponent
 
 var walkDir = Vector2.DOWN
 var isAttacking = false
-var damage = 10
 var timeSinceAttacked
 
 
