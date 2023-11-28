@@ -1,0 +1,86 @@
+[gd_scene load_steps=3 format=3 uid="uid://cplkahe1el4d"]
+
+[ext_resource type="Script" path="res://Nodes/Scenes/next_level_ui.gd" id="1_7r0os"]
+
+[sub_resource type="Theme" id="Theme_ags16"]
+default_font_size = 25
+
+[node name="Next Level UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7r0os")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00103413
+anchor_top = 0.441818
+anchor_right = 1.01086
+anchor_bottom = 0.616364
+offset_right = -331.5
+offset_bottom = -96.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+color = Color(0.243137, 0.345098, 0.247059, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 19.0
+offset_top = 20.0
+offset_right = -19.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.45098, 0.45098, 0.45098, 1)
+
+[node name="nextLevelButton" type="Button" parent="ColorRect/ColorRect2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0976
+anchor_top = 0.565789
+anchor_right = 0.2672
+anchor_bottom = 0.868421
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_ags16")
+text = "Next Level"
+metadata/_edit_use_anchors_ = true
+
+[node name="upgradesButton" type="Button" parent="ColorRect/ColorRect2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.416
+anchor_top = 0.565789
+anchor_right = 0.5856
+anchor_bottom = 0.868421
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 25
+text = "Upgrades"
+metadata/_edit_use_anchors_ = true
+
+[node name="mainMenuButton" type="Button" parent="ColorRect/ColorRect2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.744
+anchor_top = 0.565789
+anchor_right = 0.9136
+anchor_bottom = 0.868421
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 25
+text = "Main Menu"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="ColorRect/ColorRect2/nextLevelButton" to="." method="_on_next_level_button_pressed"]
+[connection signal="pressed" from="ColorRect/ColorRect2/upgradesButton" to="." method="_on_upgrades_button_pressed"]
+[connection signal="pressed" from="ColorRect/ColorRect2/mainMenuButton" to="." method="_on_main_menu_button_pressed"]
